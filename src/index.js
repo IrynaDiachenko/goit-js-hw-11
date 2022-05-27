@@ -1,10 +1,9 @@
 import './sass/main.scss';
-
 import { Notify } from 'notiflix';
 
 import { getRefs } from './js/getRefs';
 import { getImg } from './js/getImg';
-import { isAndOfImg } from './js/isAndOfImg';
+import { isEndOfImg } from './js/isEndOfImg';
 import { markup } from './js/markup';
 
 const refs = getRefs();
@@ -19,7 +18,7 @@ refs.loadMoreBtn.classList.add('is-hidden');
 
 function onSubmitClick(event) {
   event.preventDefault();
-  searchQuery = event.currentTarget.elements.searchQuery.value;
+  searchQuery = event.currentTarget.elements.searchQuery.value.trim();
   refs.loadMoreBtn.classList.add('is-hidden');
   refs.gallery.innerHTML = '';
   page = 1;

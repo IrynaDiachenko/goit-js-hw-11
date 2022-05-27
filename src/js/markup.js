@@ -1,4 +1,4 @@
-import SimpleLightbox from 'simpleLightbox';
+import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { getRefs } from './getRefs';
 
