@@ -53,3 +53,5 @@ function onMoreLoadBtnClick() {
     page += 1;
   });
 }
+
+console.log(page);
