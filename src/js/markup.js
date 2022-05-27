@@ -1,4 +1,4 @@
-import SimpleLightbox from 'simplelightbox';
+import SimpleLightbox from 'simpleLightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { getRefs } from './getRefs';
 
@@ -35,7 +35,7 @@ export function markup(images) {
       <b>Downloads  </br><span class='text'>${downloads}</span></b>
     </p>
   </div>
-</div>`,
+</div>`
     )
     .join('');
 
