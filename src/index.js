@@ -1,5 +1,5 @@
 import './sass/main.scss';
-import { Notiflix } from 'notiflix';
+import Notify from 'notiflix';
 
 import { getRefs } from './js/getRefs';
 import { getImg } from './js/getImg';
