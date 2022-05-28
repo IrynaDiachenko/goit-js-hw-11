@@ -1,5 +1,5 @@
 import { getRefs } from '../js/getRefs';
-import { Notify } from 'notiflix';
+import Notify from 'notiflix';
 
 const refs = getRefs();
 export function isEndOfImg(page, totalHits) {
