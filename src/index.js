@@ -54,4 +54,4 @@ function onMoreLoadBtnClick() {
   });
 }
 
-// console.log(page);
+console.log(page);
