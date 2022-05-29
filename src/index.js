@@ -2,7 +2,7 @@ import './sass/main.scss';
 import Notify from 'notiflix';
 
 import { getRefs } from './js/getRefs';
-import { getImg } from './js/getImg';
+import { getimg } from './js/getimg';
 import { isEndOfImg } from './js/isEndOfImg';
 import { markup } from './js/markup';
 
@@ -27,7 +27,7 @@ function onSubmitClick(event) {
     return Notify.failure('Please enter your search data.');
   }
   event.target.reset();
-  getImg(searchQuery, page).then(res => {
+  getimg(searchQuery, page).then(res => {
     const imgArray = res.data.hits;
     totalHits = res.data.totalHits;
 
@@ -47,7 +47,7 @@ function onSubmitClick(event) {
 }
 
 function onMoreLoadBtnClick() {
-  getImg(searchQuery, page).then(res => {
+  getimg(searchQuery, page).then(res => {
     markup(res);
     isEndOfImg(page, totalHits);
     page += 1;
