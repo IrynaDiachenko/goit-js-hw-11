@@ -9,7 +9,7 @@ import { markup } from './js/markup';
 const refs = getRefs();
 let page = 1;
 let searchQuery = '';
-let totalHits;
+let total;
 
 refs.searchForm.addEventListener('submit', onSubmitClick);
 refs.loadMoreBtn.addEventListener('click', onMoreLoadBtnClick);
@@ -29,7 +29,7 @@ function onSubmitClick(event) {
   event.target.reset();
   getimg(searchQuery, page).then(res => {
     const imgArray = res.data.hits;
-    totalHits = res.data.totalHits;
+    total = res.data.total;
 
     if (imgArray.length === 0) {
       refs.loadMoreBtn.classList.add('is-hidden');
@@ -38,10 +38,10 @@ function onSubmitClick(event) {
       );
     }
 
-    Notify.success(`Hooray! We found ${totalHits} images.`);
+    Notify.success(`Hooray! We found ${total} images.`);
     markup(res);
     refs.loadMoreBtn.classList.remove('is-hidden');
-    isEndOfImg(page, totalHits);
+    isEndOfImg(page, total);
     page += 1;
   });
 }
@@ -49,7 +49,7 @@ function onSubmitClick(event) {
 function onMoreLoadBtnClick() {
   getimg(searchQuery, page).then(res => {
     markup(res);
-    isEndOfImg(page, totalHits);
+    isEndOfImg(page, total);
     page += 1;
   });
 }
